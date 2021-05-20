@@ -1,4 +1,4 @@
-package com.sonar;
+package com.hackhubs.Sonar;
 
 import com.facebook.react.ReactActivity;
 

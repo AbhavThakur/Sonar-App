@@ -1,16 +1,20 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
+import authNavigator from './app/navigations/authNavigator';
+import AppStudentNavigation from './app/navigations/AppStudentNavigation';
 
-function Welcome(props) {
+const Stack = createStackNavigator();
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text></Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Auth" component={authNavigator} />
+        <Stack.Screen name="App" component={AppStudentNavigation} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {},
-});
-
-export default Welcome;
+export default App;
