@@ -5,11 +5,11 @@ import React from 'react';
 const SplashScreen = ({navigation}) => (
   <Onboarding
     bottomBarHighlight={false}
-    showSkip={false}
     onDone={() => navigation.replace('Welcome')}
+    onSkip={() => navigation.replace('Welcome')}
     pages={[
       {
-        backgroundColor: '#fff',
+        backgroundColor: '#00aeef',
         image: (
           <Image source={require('../Assets/s1.jpg')} style={styles.img} />
         ),
@@ -17,7 +17,7 @@ const SplashScreen = ({navigation}) => (
         subtitle: 'Be guided by the best teachers available',
       },
       {
-        backgroundColor: 'white',
+        backgroundColor: '#ffd894',
         image: (
           <Image source={require('../Assets/s2.jpg')} style={styles.img} />
         ),
@@ -26,7 +26,7 @@ const SplashScreen = ({navigation}) => (
           'enjoy the most of learning by studying with others like you in the same environment ',
       },
       {
-        backgroundColor: 'white',
+        backgroundColor: '#52ff94',
         image: (
           <Image source={require('../Assets/s3.jpg')} style={styles.img} />
         ),
@@ -34,7 +34,7 @@ const SplashScreen = ({navigation}) => (
         subtitle: 'Learn at your own pace',
       },
       {
-        backgroundColor: 'white',
+        backgroundColor: '#d281fd',
         image: (
           <Image source={require('../Assets/s6.jpg')} style={styles.img} />
         ),
@@ -42,7 +42,7 @@ const SplashScreen = ({navigation}) => (
         subtitle: 'Take tests and check progress',
       },
       {
-        backgroundColor: 'white',
+        backgroundColor: '#94f3ff',
         image: (
           <Image source={require('../Assets/s8.jpg')} style={styles.img} />
         ),
