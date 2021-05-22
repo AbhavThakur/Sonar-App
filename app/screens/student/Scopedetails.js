@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -7,6 +7,7 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
+  FlatList,
 } from 'react-native';
 import {Card, Button, Icon} from 'react-native-elements';
 import {
@@ -15,24 +16,72 @@ import {
 } from 'react-native-responsive-screen';
 
 const Scopedetails = ({navigation}) => {
-  return (
-    <ScrollView>
-      <SafeAreaView style={styles.container}>
-        <View style={styles.container}>
-          <Text style={styles.paragraph}>SCOPE DEPARTMENT</Text>
+  const [value, setData] = useState([]);
 
+  useEffect(async () => {
+    const dd = fetch('https://nodetestrestapi.herokuapp.com/scope', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const resData = dd.json();
+    setData(resData);
+  });
+
+  const header = () => {
+    return (
+      <View>
+        <View
+          style={{
+            position: 'absolute',
+            left: 15,
+            top: 20,
+          }}>
           <TouchableOpacity
-            style={styles.btn}
-            onPress={() => console.log('hello')}
-            activeOpacity={0.6}>
-            <Text style={styles.text}>View Now</Text>
+            activeOpacity={0.5}
+            // style={{backgroundColor: 'yellow'}}
+            onPress={() => navigation.goBack()}>
+            <Text>Back</Text>
           </TouchableOpacity>
         </View>
-      </SafeAreaView>
-    </ScrollView>
+      </View>
+    );
+  };
+  return (
+    <SafeAreaView style={styles.container}>
+      <View>
+        <FlatList
+          data={value}
+          ListHeaderComponent={header}
+          stickyHeaderIndices={[0]}
+          renderItem={({item}) => (
+            <View>
+              <Image
+                source={{
+                  uri:
+                    'https://chennai.vit.ac.in/wp-content/uploads/2020/02/Dr.Elavenil-S.jpg',
+                }}
+                style={{
+                  height: hp('26%'),
+                  width: wp('40%'),
+                  position: 'absolute',
+                  left: 10,
+                  top: 10,
+                  borderRadius: wp('40%') / 16,
+                }}
+              />
+              <Text style={styles.txt}>{item.name}</Text>
+              <Text style={styles.sub}>{item.post}</Text>
+              <Text style={styles.sub2}>{item.mail}</Text>
+            </View>
+          )}
+        />
+      </View>
+    </SafeAreaView>
   );
 };
-export default Scopedetails;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -66,4 +115,25 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
   },
+  txt: {
+    color: 'white',
+    fontSize: 18,
+    marginLeft: wp('50%'),
+    marginTop: hp('6%'),
+    fontWeight: 'bold',
+  },
+  sub: {
+    color: 'white',
+    fontSize: 18,
+    marginLeft: wp('50%'),
+    marginTop: hp('2%'),
+  },
+  sub2: {
+    color: 'white',
+    fontSize: 16,
+    marginLeft: wp('50%'),
+    marginTop: hp('2%'),
+  },
 });
+
+export default Scopedetails;

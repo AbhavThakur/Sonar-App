@@ -13,20 +13,27 @@ import SmecDetails from '../screens/student/SmecDetails';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
-const HomeStack = () => (
-  <Stack.Navigator screenOptions={{headerShown: false}}>
-    <Stack.Screen
-      name="Home"
-      component={detailStudent}
-      options={{headerShown: false}}
-    />
-    <Stack.Screen name="Details" component={Scopedetails} />
-    <Stack.Screen name="SenseDetails" component={Sensedetails} />
-    <Stack.Screen name="SelectDetails" component={SelectDetails} />
-    <Stack.Screen name="SceDetails" component={SceDetails} />
-    <Stack.Screen name="SmecDetails" component={SmecDetails} />
-  </Stack.Navigator>
-);
+const HomeStack = ({navigation, route}) => {
+  if (route.state && route.state.index > 0) {
+    navigation.setOptions({tabBarVisible: false});
+  } else {
+    navigation.setOptions({tabBarVisible: true});
+  }
+  return (
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen
+        name="Home"
+        component={detailStudent}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen name="Details" component={Scopedetails} />
+      <Stack.Screen name="SenseDetails" component={Sensedetails} />
+      <Stack.Screen name="SelectDetails" component={SelectDetails} />
+      <Stack.Screen name="SceDetails" component={SceDetails} />
+      <Stack.Screen name="SmecDetails" component={SmecDetails} />
+    </Stack.Navigator>
+  );
+};
 
 const AppStudentNavigation = () => (
   <Tab.Navigator
