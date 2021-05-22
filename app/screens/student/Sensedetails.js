@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
   },
   card: {
     height: hp('30%'),
-    width: wp('90%'),
+    width: wp('91.5%'),
     backgroundColor: '#e5ecfa',
     // borderWidth:0.7,
     marginTop: hp('6%'),

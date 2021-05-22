@@ -17,6 +17,7 @@ import {
 import auth from '@react-native-firebase/auth';
 import firebase from '@react-native-firebase/app';
 import {LoginButton, AccessToken, LoginManager} from 'react-native-fbsdk-next';
+import {SocialIcon} from 'react-native-elements';
 
 // import {useFocusEffect} from '@react-navigation/native';
 
@@ -154,6 +155,7 @@ function LoginScreen(props) {
       ) : (
         <View>{props.navigation.replace('App')}</View>
       )}
+      {/* <SocialIcon title="Sign In With Facebook" button type="facebook" /> */}
       {!loggedIn ? (
         <TouchableOpacity
           onPress={fbLogin}

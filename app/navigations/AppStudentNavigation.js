@@ -75,7 +75,7 @@ const AppStudentNavigation = () => (
         ),
       }}
     />
-    <Tab.Screen
+    {/* <Tab.Screen
       name="Events"
       component={detailStudent}
       options={{
@@ -103,7 +103,7 @@ const AppStudentNavigation = () => (
           </View>
         ),
       }}
-    />
+    /> */}
     <Tab.Screen
       name="Profile"
       component={SProfile}

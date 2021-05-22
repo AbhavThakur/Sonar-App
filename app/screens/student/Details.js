@@ -1,5 +1,13 @@
 import React from 'react';
-import {View, StyleSheet, Text, Image, TextInput} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  Image,
+  TextInput,
+  ScrollView,
+  SafeAreaView,
+} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -8,30 +16,32 @@ import {
 function Details({route}) {
   const listening = route.params;
   return (
-    <View style={styles.container}>
-      <Text style={styles.txt}>{listening.name}</Text>
-      <Image
-        style={styles.image}
-        source={{
-          uri: listening.img,
-        }}
-        resizeMode="contain"
-      />
-      <View style={styles.box}>
-        <Text style={styles.sub}>{listening.post}</Text>
-      </View>
-      <View style={styles.box2}>
-        <Text style={styles.sub2}>{listening.mail}</Text>
-      </View>
-      <View style={styles.box3}>
-        <TextInput
-          placeholderTextColor="black"
-          placeholder="Give feedback"
-          textAlign="left"
-          style={{fontSize: 14, marginLeft: 10, fontWeight: 'bold'}}
+    <SafeAreaView style={styles.container}>
+      <ScrollView>
+        <Text style={styles.txt}>{listening.name}</Text>
+        <Image
+          style={styles.image}
+          source={{
+            uri: listening.img,
+          }}
+          resizeMode="contain"
         />
-      </View>
-    </View>
+        <View style={styles.box}>
+          <Text style={styles.sub}>{listening.post}</Text>
+        </View>
+        <View style={styles.box2}>
+          <Text style={styles.sub2}>{listening.mail}</Text>
+        </View>
+        <View style={styles.box3}>
+          <TextInput
+            placeholderTextColor="black"
+            placeholder="Give feedback"
+            textAlign="left"
+            style={{fontSize: 14, marginLeft: 10, fontWeight: 'bold'}}
+          />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -41,8 +51,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   image: {
-    width: '100%',
-    height: hp('40%'),
+    width: '90%',
+    height: hp('30%'),
   },
   txt: {
     color: 'black',
@@ -53,38 +63,41 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   sub: {
-    fontSize: 23,
-    marginLeft: wp('8%'),
-    marginTop: hp('2%'),
+    fontSize: 20,
+
     color: 'white',
     fontWeight: 'bold',
   },
   sub2: {
     color: 'white',
-    fontSize: 20,
-    marginLeft: wp('40%'),
+    fontSize: 17,
+    fontWeight: 'bold',
   },
   box: {
-    height: hp('10%'),
-    width: wp('100%'),
+    height: hp('7%'),
+    width: wp('50%'),
     marginTop: hp('3%'),
     backgroundColor: '#e44e73',
     fontWeight: 'bold',
     // borderRadius: wp("100%") / 28,
     alignItems: 'center',
+    justifyContent: 'center',
   },
   box2: {
-    height: hp('10%'),
-    width: wp('100%'),
-    // marginTop: hp("3%"),
+    height: hp('7%'),
+    width: wp('50%'),
     backgroundColor: '#f57595',
     fontWeight: 'bold',
     paddingTop: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    left: 191,
+    bottom: 50,
   },
   box3: {
     height: hp('20%'),
     width: wp('80%'),
-    marginTop: hp('3%'),
+
     backgroundColor: '#ebf3f4',
     fontWeight: 'bold',
     borderRadius: wp('100%') / 28,
