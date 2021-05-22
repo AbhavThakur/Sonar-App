@@ -3,6 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import authNavigator from './app/navigations/authNavigator';
 import AppStudentNavigation from './app/navigations/AppStudentNavigation';
+import LoginScreen from './app/screens/student/Login';
 
 const Stack = createStackNavigator();
 

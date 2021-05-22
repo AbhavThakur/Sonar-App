@@ -126,10 +126,11 @@ function LoginScreen(props) {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../Assets/collge.jpg')}
+        source={require('../../Assets/s1.jpg')}
         style={{
-          width: 375,
-          height: 210,
+          width: 380,
+          height: 300,
+          bottom: 40,
         }}
       />
       <Text
@@ -138,12 +139,14 @@ function LoginScreen(props) {
           fontWeight: 'bold',
           color: 'black',
           marginLeft: 10,
+          paddingVertical: 5,
+          paddingBottom: 20,
         }}>
         Welcome to the App
       </Text>
       {!loggedIn ? (
         <GoogleSigninButton
-          style={{width: 192, height: 48}}
+          style={{width: 192, height: 48, padding: 20}}
           size={GoogleSigninButton.Size.Wide}
           color={GoogleSigninButton.Color.Dark}
           onPress={_signIn}
@@ -152,8 +155,12 @@ function LoginScreen(props) {
         <View>{props.navigation.replace('App')}</View>
       )}
       {!loggedIn ? (
-        <TouchableOpacity onPress={fbLogin} style={{backgroundColor: 'yellow'}}>
-          <Text>Login With Facebook</Text>
+        <TouchableOpacity
+          onPress={fbLogin}
+          style={{backgroundColor: '#0146c6', marginTop: 10, padding: 10}}>
+          <Text style={{color: 'white', fontWeight: 'bold', fontSize: 16}}>
+            Login With Facebook
+          </Text>
         </TouchableOpacity>
       ) : (
         <View>{props.navigation.replace('App')}</View>
@@ -164,12 +171,11 @@ function LoginScreen(props) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'absolute',
-    marginTop: 40,
-    padding: 10,
+    padding: 20,
+    backgroundColor: 'white',
   },
 });
 

@@ -53,7 +53,8 @@ const SceDetails = ({navigation}) => {
           stickyHeaderIndices={[0]}
           renderItem={({item}) => (
             <View style={styles.container}>
-              <TouchableOpacity onPress={() => console.log('Sce')}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate('MainDetails', item)}>
                 <View style={styles.card}>
                   <Image
                     source={{
