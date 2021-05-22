@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   FlatList,
 } from 'react-native';
-import {Foundation} from '@expo/vector-icons';
+import { Foundation } from '@expo/vector-icons';
 export default class SProfile extends Component {
   constructor(props) {
     super(props);
@@ -68,11 +68,11 @@ export default class SProfile extends Component {
             keyExtractor={item => {
               return item.id;
             }}
-            renderItem={({item}) => {
+            renderItem={({ item }) => {
               return (
                 <TouchableOpacity>
                   <View style={styles.box}>
-                    <Image style={styles.icon} source={{uri: item.image}} />
+                    <Image style={styles.icon} source={{ uri: item.image }} />
                     <Text style={styles.title}>{item.title}</Text>
                     <Image
                       style={styles.btn}
@@ -114,6 +114,7 @@ export default class SProfile extends Component {
 }
 
 const styles = StyleSheet.create({
+
   header: {
     backgroundColor: 'white',
   },
