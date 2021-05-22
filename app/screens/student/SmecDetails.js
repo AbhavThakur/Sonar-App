@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -9,13 +9,13 @@ import {
   TouchableOpacity,
   FlatList,
 } from 'react-native';
-import {Card, Button, Icon} from 'react-native-elements';
+import { Card, Button, Icon } from 'react-native-elements';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-const SmecDetails = ({navigation}) => {
+const SmecDetails = ({ navigation }) => {
   const [value, setData] = useState([]);
 
   useEffect(() => {
@@ -34,20 +34,12 @@ const SmecDetails = ({navigation}) => {
 
   const header = () => {
     return (
-      <View>
-        <View
-          style={{
-            position: 'absolute',
-            left: 15,
-            top: 20,
-          }}>
-          <TouchableOpacity
-            activeOpacity={0.5}
-            style={{backgroundColor: 'yellow'}}
-            onPress={() => navigation.goBack()}>
-            <Text>Back</Text>
-          </TouchableOpacity>
-        </View>
+      <View
+        style={{
+          alignItems: 'center',
+          marginTop: hp("3%")
+        }}>
+        <Text style={{ fontWeight: 'bold', fontSize: 23, color: "#5d043c" }}>School of Mechanical Engineering </Text>
       </View>
     );
   };
@@ -58,27 +50,31 @@ const SmecDetails = ({navigation}) => {
           data={value}
           ListHeaderComponent={header}
           stickyHeaderIndices={[0]}
-          renderItem={({item}) => (
+          renderItem={({ item }) => (
+
             <View style={styles.container}>
-              <View style={styles.card}>
-                <Image
-                  source={{
-                    uri: item.img,
-                  }}
-                  style={{
-                    height: hp('26%'),
-                    width: wp('40%'),
-                    position: 'absolute',
-                    left: 10,
-                    top: 10,
-                    borderRadius: wp('40%') / 16,
-                  }}
-                />
-                <Text style={styles.txt}>{item.name}</Text>
-                <Text style={styles.sub}>{item.post}</Text>
-                <Text style={styles.sub2}>{item.mail}</Text>
-              </View>
+              <TouchableOpacity onPress={() => console.log("Smec")}>
+                <View style={styles.card}>
+                  <Image
+                    source={{
+                      uri: item.img,
+                    }}
+                    style={{
+                      height: hp('26%'),
+                      width: wp('40%'),
+                      position: 'absolute',
+                      left: 10,
+                      top: 10,
+                      borderRadius: wp('40%') / 16,
+                    }}
+                  />
+                  <Text style={styles.txt}>{item.name}</Text>
+                  <Text style={styles.sub}>{item.post}</Text>
+                  <Text style={styles.sub2}>{item.mail}</Text>
+                </View>
+              </TouchableOpacity>
             </View>
+
           )}
         />
       </View>
