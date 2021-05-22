@@ -18,16 +18,19 @@ import {
 const Scopedetails = ({navigation}) => {
   const [value, setData] = useState([]);
 
-  useEffect(async () => {
-    const dd = fetch('https://nodetestrestapi.herokuapp.com/scope', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    const resData = dd.json();
-    setData(resData);
-  });
+  useEffect(() => {
+    const info = async () => {
+      const dd = await fetch('https://nodetestrestapi.herokuapp.com/scope', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      const resData = await dd.json();
+      setData(resData);
+    };
+    info();
+  }, []);
 
   const header = () => {
     return (
@@ -40,7 +43,7 @@ const Scopedetails = ({navigation}) => {
           }}>
           <TouchableOpacity
             activeOpacity={0.5}
-            // style={{backgroundColor: 'yellow'}}
+            style={{backgroundColor: 'yellow'}}
             onPress={() => navigation.goBack()}>
             <Text>Back</Text>
           </TouchableOpacity>
@@ -56,24 +59,25 @@ const Scopedetails = ({navigation}) => {
           ListHeaderComponent={header}
           stickyHeaderIndices={[0]}
           renderItem={({item}) => (
-            <View>
-              <Image
-                source={{
-                  uri:
-                    'https://chennai.vit.ac.in/wp-content/uploads/2020/02/Dr.Elavenil-S.jpg',
-                }}
-                style={{
-                  height: hp('26%'),
-                  width: wp('40%'),
-                  position: 'absolute',
-                  left: 10,
-                  top: 10,
-                  borderRadius: wp('40%') / 16,
-                }}
-              />
-              <Text style={styles.txt}>{item.name}</Text>
-              <Text style={styles.sub}>{item.post}</Text>
-              <Text style={styles.sub2}>{item.mail}</Text>
+            <View style={styles.container}>
+              <View style={styles.card}>
+                <Image
+                  source={{
+                    uri: item.img,
+                  }}
+                  style={{
+                    height: hp('26%'),
+                    width: wp('40%'),
+                    position: 'absolute',
+                    left: 10,
+                    top: 10,
+                    borderRadius: wp('40%') / 16,
+                  }}
+                />
+                <Text style={styles.txt}>{item.name}</Text>
+                <Text style={styles.sub}>{item.post}</Text>
+                <Text style={styles.sub2}>{item.mail}</Text>
+              </View>
             </View>
           )}
         />
@@ -83,37 +87,15 @@ const Scopedetails = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#ecf0f1',
-  },
-  paragraph: {
-    margin: 24,
-    fontSize: 20,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: '#34495e',
-  },
-  image: {
+  container: {flex: 1},
+  card: {
+    height: hp('30%'),
     width: wp('90%'),
-    height: hp('20%'),
-  },
-  btn: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: wp('80%'),
+    backgroundColor: '#e5ecfa',
+    // borderWidth:0.7,
+    marginTop: hp('6%'),
     marginLeft: wp('5%'),
-    height: hp('6%'),
-    padding: hp('1%'),
-    backgroundColor: '#065a7f',
-    borderRadius: wp('60%') / 24,
-  },
-  text: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: 'white',
+    borderRadius: wp('80%') / 12,
   },
   txt: {
     color: 'white',
