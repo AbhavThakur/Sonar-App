@@ -87,7 +87,10 @@ const SelectDetails = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-  container: {flex: 1},
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
   card: {
     height: hp('30%'),
     width: wp('90%'),
@@ -98,20 +101,20 @@ const styles = StyleSheet.create({
     borderRadius: wp('80%') / 12,
   },
   txt: {
-    color: 'white',
+    color: 'black',
     fontSize: 18,
     marginLeft: wp('50%'),
     marginTop: hp('6%'),
     fontWeight: 'bold',
   },
   sub: {
-    color: 'white',
+    color: 'black',
     fontSize: 18,
     marginLeft: wp('50%'),
     marginTop: hp('2%'),
   },
   sub2: {
-    color: 'white',
+    color: 'black',
     fontSize: 16,
     marginLeft: wp('50%'),
     marginTop: hp('2%'),

@@ -30,22 +30,26 @@ const detailStudent = ({navigation}) => {
             <View flexDirection="column">
               <View
                 style={{
-                  flexDirection: 'row',
                   justifyContent: 'center',
                   alignItems: 'center',
                 }}>
-                <Text style={styles.branch}>Branch1</Text>
-                <Text style={styles.branch}>Branch2</Text>
+                <Text style={styles.branch}>
+                  Computer Science and Engineering (CSE)
+                </Text>
+                <Text style={styles.branch}>
+                  CSE with Specialisation in AI and ML
+                </Text>
               </View>
 
               <View
                 style={{
-                  flexDirection: 'row',
                   justifyContent: 'center',
                   alignItems: 'center',
                 }}>
-                <Text style={styles.branch}>Branch3</Text>
-                <Text style={styles.branch}>Branch4</Text>
+                <Text style={styles.branch}>
+                  CSE with specialisation in Cyber Physical Systems
+                </Text>
+                {/* <Text style={styles.branch}>Branch4</Text> */}
               </View>
             </View>
 
@@ -70,7 +74,9 @@ const detailStudent = ({navigation}) => {
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
-              <Text style={styles.branch}>Branch1</Text>
+              <Text style={styles.branch}>
+                Electrical and Electronics Engineering (EEE)
+              </Text>
             </View>
 
             <TouchableOpacity
@@ -91,12 +97,15 @@ const detailStudent = ({navigation}) => {
 
             <View
               style={{
-                flexDirection: 'row',
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
-              <Text style={styles.branch}>Branch1</Text>
-              <Text style={styles.branch}>Branch2</Text>
+              <Text style={styles.branch}>
+                Electronics and Computer Engineering (ECM)
+              </Text>
+              <Text style={styles.branch}>
+                Electronics and Communication Engineering (ECE)
+              </Text>
             </View>
 
             <TouchableOpacity
@@ -119,7 +128,7 @@ const detailStudent = ({navigation}) => {
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
-              <Text style={styles.branch}>Branch1</Text>
+              <Text style={styles.branch}>Civil Engineering (CE)</Text>
             </View>
 
             <TouchableOpacity
@@ -139,21 +148,20 @@ const detailStudent = ({navigation}) => {
 
             <View
               style={{
-                flexDirection: 'row',
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
-              <Text style={styles.branch}>Branch1</Text>
-              <Text style={styles.branch}>Branch2</Text>
+              <Text style={styles.branch}>Mechanical Engineering (ME)</Text>
+              <Text style={styles.branch}>Mechatronics Engineering</Text>
             </View>
-            <View
+            {/* <View
               style={{
                 flexDirection: 'row',
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
               <Text style={styles.branch}>Branch3</Text>
-            </View>
+            </View> */}
 
             <TouchableOpacity
               style={styles.btn}
