@@ -7,7 +7,7 @@ import SplashScreen from '../screens/SplashScreen';
 import Login from '../screens/student/Login';
 import detailStudent from '../screens/student/detailStudent';
 
-import loginTeacher from '../screens/teacher/loginTeacher';
+import LoginTeacher from '../screens/teacher/loginTeacher';
 import detailsTeacher from '../screens/teacher/detailsTeacher';
 
 const Stack = createStackNavigator();
@@ -25,7 +25,7 @@ function authNavigator() {
       <Stack.Screen name="onBoard" component={SplashScreen} />
       <Stack.Screen name="LoginStudent" component={Login} />
       <Stack.Screen name="studentDetails" component={detailStudent} />
-      <Stack.Screen name="teacherLogin" component={loginTeacher} />
+      <Stack.Screen name="teacherLogin" component={LoginTeacher} />
       <Stack.Screen name="teacherDetails" component={detailsTeacher} />
     </Stack.Navigator>
   );

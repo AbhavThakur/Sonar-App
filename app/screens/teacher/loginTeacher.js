@@ -9,7 +9,7 @@ import {
 import auth from '@react-native-firebase/auth';
 // import {useFocusEffect} from '@react-navigation/native';
 
-function loginTeacher(props) {
+function LoginTeacher(props) {
   //   useFocusEffect(
   //     React.useCallback(() => {
   //       const onBackPress = () => {
@@ -84,12 +84,13 @@ function loginTeacher(props) {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../Assets/teacher.jpg')}
+        source={require('../../Assets/st.jpg')}
         style={{
-          width: 500,
-          height: 300,
-          marginLeft: 2,
+          width: 400,
+          height: 500,
+          // backgroundColor: "white"
         }}
+        resizeMode="contain"
       />
       <Text
         style={{
@@ -108,7 +109,7 @@ function loginTeacher(props) {
           onPress={_signIn}
         />
       ) : (
-        <View>{props.navigation.replace('teacherDetails')}</View>
+        <View>{props.navigation.navigate('teacherDetails')}</View>
       )}
     </View>
   );
@@ -119,10 +120,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'absolute',
-    marginTop: 40,
+    // position: 'absolute',
+    marginTop: -60,
     backgroundColor: 'white',
   },
 });
 
-export default loginTeacher;
+export default LoginTeacher;

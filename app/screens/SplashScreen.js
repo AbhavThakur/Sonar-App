@@ -11,43 +11,44 @@ const SplashScreen = ({navigation}) => (
       {
         backgroundColor: '#00aeef',
         image: (
-          <Image source={require('../Assets/s1.jpg')} style={styles.img} />
+          <Image source={require('../Assets/s1.png')} style={styles.img} />
         ),
         title: 'Learn online',
+        titleStyles: {fontSize: 42, fontWeight: 'bold'},
         subtitle: 'Be guided by the best teachers available',
+        subTitleStyles: {fontSize: 18, color: '#fffafa'},
       },
       {
         backgroundColor: '#ffd894',
         image: (
-          <Image source={require('../Assets/s2.jpg')} style={styles.img} />
+          <Image source={require('../Assets/s2.png')} style={styles.img} />
         ),
         title: 'Online classes',
+        titleStyles: {fontSize: 42, fontWeight: 'bold', color: '#4b004d'},
         subtitle:
           'enjoy the most of learning by studying with others like you in the same environment ',
+        subTitleStyles: {fontSize: 18, color: '#5e0a61'},
       },
+
       {
         backgroundColor: '#52ff94',
         image: (
-          <Image source={require('../Assets/s3.jpg')} style={styles.img} />
+          <Image source={require('../Assets/s3.png')} style={styles.img} />
         ),
         title: 'Being taught online',
+        titleStyles: {fontSize: 36, fontWeight: 'bold', color: '#024101'},
         subtitle: 'Learn at your own pace',
+        subTitleStyles: {fontSize: 18, color: '#076105'},
       },
       {
         backgroundColor: '#d281fd',
         image: (
-          <Image source={require('../Assets/s6.jpg')} style={styles.img} />
+          <Image source={require('../Assets/s6.png')} style={styles.img} />
         ),
         title: 'Test yourself ',
+        titleStyles: {fontSize: 36, fontWeight: 'bold', color: '#35013c'},
         subtitle: 'Take tests and check progress',
-      },
-      {
-        backgroundColor: '#94f3ff',
-        image: (
-          <Image source={require('../Assets/s8.jpg')} style={styles.img} />
-        ),
-        title: 'Difficulty in reading',
-        subtitle: 'Communicate in your own language via signs!',
+        subTitleStyles: {fontSize: 18, color: '#4d2852'},
       },
     ]}
   />
