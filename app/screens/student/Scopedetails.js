@@ -37,14 +37,17 @@ const Scopedetails = ({navigation}) => {
       <View
         style={{
           alignItems: 'center',
+          marginTop: hp('3%'),
         }}>
-        <Text style={{fontWeight: 'bold', fontSize: 24}}>Scope</Text>
+        <Text style={{fontWeight: 'bold', fontSize: 23, color: '#5f0179'}}>
+          School of Computer Science and Engineering
+        </Text>
       </View>
     );
   };
   return (
     <SafeAreaView>
-      <View>
+      <View style={styles.cont}>
         <FlatList
           data={value}
           ListHeaderComponent={header}
@@ -81,6 +84,7 @@ const Scopedetails = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
+  cont: {backgroundColor: 'white'},
   container: {
     flex: 1,
     backgroundColor: 'white',
