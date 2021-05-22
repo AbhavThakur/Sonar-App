@@ -9,6 +9,7 @@ import Sensedetails from '../screens/student/Sensedetails';
 import SelectDetails from '../screens/student/SelectDetails';
 import SceDetails from '../screens/student/SceDetails';
 import SmecDetails from '../screens/student/SmecDetails';
+import Details from '../screens/student/Details';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -31,6 +32,7 @@ const HomeStack = ({navigation, route}) => {
       <Stack.Screen name="SelectDetails" component={SelectDetails} />
       <Stack.Screen name="SceDetails" component={SceDetails} />
       <Stack.Screen name="SmecDetails" component={SmecDetails} />
+      <Stack.Screen name="MainDetails" component={Details} />
     </Stack.Navigator>
   );
 };
